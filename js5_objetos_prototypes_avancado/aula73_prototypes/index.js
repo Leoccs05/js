@@ -2,7 +2,15 @@
 function Pessoa(nome, sobrenome){
     this.nome = nome;
     this.sobrenome = sobrenome;
-    this.nomeCompleto = () => this.nome + ' ' + this.sobrenome;
+   //this.nomeCompleto = () => this.nome + ' ' + this.sobrenome;
+}
+
+//Pessoa.prototype === pessoa1.__proto__;
+//prototype,  ajuda a melhorar a performace de velocidade do sistema;
+//primeiro o motor do js procura em Pessoa e depois no prototype;
+
+Pessoa.prototype.nomeCompleto = function(){
+    return this.nome + ' ' + this.sobrenome;
 }
 
 //instancia
