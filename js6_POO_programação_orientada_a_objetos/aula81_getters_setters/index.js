@@ -1,12 +1,12 @@
 //Symbol propriedade Privada
 const _velocidade = Symbol('velocidade')
-// mudar todos os this[_velocidade] para this[_velocidade]
+// mudar todos os this[_velocidade] para this[_velocidade];
 class Carro {
     constructor(nome){
         this.nome = nome;
         this[_velocidade] = 0;
     }
-    //usa get e set para simular que a pessoa esta mexendo direto na velocidade, porem esta mexendo no set e get
+    //usa get e set para simular que a pessoa esta mexendo direto na velocidade, porem esta mexendo no set e get;
     set velocidade(valor){
         console.log('setter')
         if(typeof valor !== 'number') return;
