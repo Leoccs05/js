@@ -1,0 +1,13 @@
+gerar package.json: npm init -y
+Desinstalar: npm uninstall (nome pacote) 
+instalar: npm i ou npm install
+alterar para o patch: '~' antes da versão;
+alterar para o minor e patch: '^' antes da versão;
+instalar uma versão especifica: npm install (nomeDoPacote)@(versão)
+instalar uma versão especifica com o  minor e patch atualizado: npm install (nomeDoPacote)@(versão.x)
+ver o que esta desatualizado: npm outdated
+atualizar: npm uptade
+Listar os pacotes e dependencia: npm ls
+ver a listaa do pacote que eu instalei: npm ls --depth=(valor da profundidade da pasta)
+salvar em devDependencies: --save-dev
+salvar em dependencies: --save-prod
