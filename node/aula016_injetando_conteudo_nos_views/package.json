@@ -1,5 +1,5 @@
 {
-  "name": "aula014_mongodb_conexao_primeiro_modulo",
+  "name": "aula016_injetando_conteudo_nos_views",
   "version": "1.0.0",
   "main": "sever.js",
   "scripts": {
