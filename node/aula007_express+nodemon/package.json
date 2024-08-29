@@ -1,5 +1,5 @@
 {
-  "name": "aula006_express_introducao",
+  "name": "aula007_express+nodemon",
   "version": "1.0.0",
   "main": "sever.js",
   "scripts": {

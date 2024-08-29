@@ -1,5 +1,5 @@
 {
-  "name": "aula006_express_introducao",
+  "name": "aula008_express_req.params_req.query_req.body",
   "version": "1.0.0",
   "main": "sever.js",
   "scripts": {
