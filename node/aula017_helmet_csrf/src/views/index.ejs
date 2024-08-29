@@ -1,0 +1,28 @@
+<%- include('includes/head') %>
+
+
+  <section class="container">
+  
+    <h1>
+      <!-- <% if(typeof titulo !== 'undefined') { %>
+      <%= titulo %>
+      <% } else { %>
+       O TITULO NÃO FOI ENVIADO
+      <% } %>
+      <%= titulo%> nao escapa caracteris "mais seguro"
+     <%- titulo%>executa as tag 
+     <% numeros.forEach(num => {%>
+      <%= num %>
+     <% });%>-->
+     Lorem ipsum, dolor sit
+    </h1>
+
+
+    <form action="/" method="post">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <label>Cliente</label>
+      <input type="text" name="cliente">
+      <button>Submit</button>
+    </form>
+  </section>
+  <%- include('includes/footer') %>
