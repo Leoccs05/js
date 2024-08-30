@@ -1,28 +1,18 @@
 exports.middlewareGlobal = (req, res, next) =>{
-    //injeta dados em todas as rotas
-    res.locals.umaVariavelLocal = 'Este é o valor da variavel local'
-
-    console.log()
-    //console.log('Passei no seu middleware')
-    if(req.body.cliente){
-        req.body.cliente = req.body.cliente.replace('Casadei', 'Não use Casadei')
-        console.log(`Vi que voce postou ${req.body.cliente}`)
-    }
-    console.log()
+    res.locals.umaVariavelLocal = 'Este é o valor da variavel local';
     next()
 }
 
 exports.outroMiddlewareGlobal = (req, res, next) =>{
-    console.log()
-    console.log('Passei no seu middleware')
-    console.log()
     next()
 }
 
 exports.checkCsrfError = (err, req, res, next) =>{
-    if(err && 'EBADCSRFTOKEN' === err.code){
+    //Erro não passa para frente so mostra a pagina
+    if(err){
         return res.render('404')
     }
+    next()
 }
 
 exports.csrfMiddleware = (req, res, next) => {
