@@ -51,6 +51,7 @@ app.set('views', path.resolve(__dirname, 'src', 'views'))
 app.set('view engine', 'ejs')
 
 app.use(csrf())
+
 //Chamar todos os middles em todas as requesiçoes
 app.use(middlewareGlobal)
 app.use(outroMiddlewareGlobal)
