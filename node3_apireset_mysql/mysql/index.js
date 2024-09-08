@@ -11,8 +11,8 @@ const conn = mysql.createConnection({
 });
 
 // chamando a função que conecta com o banco de dados
-conn.connect((err) => {
-  if (err) {
+conn.connect((error) => {
+  if (error) {
     console.log('Erro ao tentar se conectar com o banco de dados');
   }
 
