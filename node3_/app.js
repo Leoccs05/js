@@ -1,3 +1,5 @@
+
+
 export default() => {
-    console.log('Olá mundo!')
+    console.log('Olá mundo!');
 }
