@@ -11,10 +11,11 @@ router.put('/:id', userController.update)
 router.delete('/:id', userController.delete)
 
 export default router
+
 /*
-index ->         lista usuarios           - get
-store/crate ->  cria novo usuario         - post
-delete ->       apaga um usuario          - delete
-show->          mostra usuario            - get
-uptade ->       atualiza usuario          - patch ou put
+index         ->  lista usuarios       - get
+store/crate   ->  cria novo usuario    - post
+delete        ->  apaga um usuario     - delete
+show          ->  mostra usuario       - get
+uptade        ->  atualiza usuario     - patch ou put
 */
