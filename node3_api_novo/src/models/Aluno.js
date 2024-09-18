@@ -8,15 +8,36 @@ const db = require("../config/database");
 //criando a tabela
 const Aluno = db.define("Aluno", {
     //criando as colunas
-    name: {
+    nome: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    age: {
+    sobrenome: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    idade: {
         type: DataTypes.INTEGER,
         required: true,
     },
+    email: {
+      type: DataTypes.STRING,
+      required: true,
+    },
+    peso: {
+      type: DataTypes.FLOAT,
+      required: true,
+    },
+    altura: {
+      type: DataTypes.FLOAT,
+      required: true,
+    },
 });
+
+//Sincronizar tabela com banco de dados
+(async () => {
+  await db.sync({ alter: true });
+})();
 
 //importando a tabela
 module.exports = Aluno;
