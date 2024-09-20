@@ -11,26 +11,62 @@ const Aluno = db.define("Aluno", {
     nome: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate:{
+          len:{
+            args: [3,255],
+            msg: 'Nome precisa ter entre 3 e 255'
+          }
+        }
     },
     sobrenome: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    idade: {
-        type: DataTypes.INTEGER,
-        required: true,
+      validate:{
+        len:{
+          args: [3,255],
+          msg: 'Nome precisa ter entre 3 e 255'
+        }
+      }
+
     },
     email: {
       type: DataTypes.STRING,
       required: true,
+      unique:{
+        msg: 'E-mail já existe',
+      },
+      validate:{
+        isEmail:{
+          msg: 'Email invalido',
+        }
+      }
+    },
+    idade: {
+        type: DataTypes.INTEGER,
+        required: true,
+        validate:{
+          isInt:{
+            msg: 'Idade precisa ser um numero inteiro'
+          }
+        }
     },
     peso: {
       type: DataTypes.FLOAT,
       required: true,
+      validate:{
+        isFloat:{
+          msg: 'Peso precisa ser um numero'
+        }
+      }
     },
     altura: {
       type: DataTypes.FLOAT,
       required: true,
+      validate:{
+        isFloat:{
+          msg: 'Altura precisa ser um numero'
+        }
+      }
     },
 });
 

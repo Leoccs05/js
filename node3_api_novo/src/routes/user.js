@@ -1,14 +1,16 @@
 import { Router } from 'express'
 import userController from '../controllers/user'
+import loginRequired from '../middlewares/loginRequired'
 
 const router = new Router()
 
 //para add usuario mudar rota store de post -> get
+router.get('/', userController.index); // Lista usuario
+router.get('/:id', userController.show); // Lista usuario
+
 router.post('/', userController.store)
-router.get('/', userController.index)
-router.get('/:id', userController.show)
-router.put('/:id', userController.update)
-router.delete('/:id', userController.delete)
+router.put('/', loginRequired, userController.update)
+router.delete('/', loginRequired, userController.delete)
 
 export default router
 
