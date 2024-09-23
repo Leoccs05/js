@@ -70,6 +70,10 @@ const Aluno = db.define("Aluno", {
     },
 });
 
+Aluno.associate = (models) => {
+  Aluno.hasMany(models.Foto, { foreignKey: 'aluno_id' });
+};
+
 //Sincronizar tabela com banco de dados
 (async () => {
   await db.sync({ alter: true });

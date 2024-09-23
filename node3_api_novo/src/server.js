@@ -1,6 +1,6 @@
 import app from './app'
 //importando a conexão com o banco de dados
-const conn = require("./src/config/database");
+const conn = require("./config/database");
 
 const port = 3003
 
