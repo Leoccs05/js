@@ -11,7 +11,6 @@ export const Title = styled.h1`
 `
 
 export const Paragrafo = styled.p`
-  color: gray;
   font-size: 80px
 `
 
