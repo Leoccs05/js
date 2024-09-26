@@ -1,6 +1,8 @@
 //importando o metodo de tipos de dados para criar a tabela que vai ser usada
 const { DataTypes } = require("sequelize");
 
+import Foto from './Foto'
+
 //necessário a conexão com o banco de dados, pois é lá aonde vai ser criada a
 //tabela
 const db = require("../config/database");

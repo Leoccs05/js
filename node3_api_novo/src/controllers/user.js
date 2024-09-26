@@ -5,11 +5,10 @@ class UserController{
   async store(req, res){
     try{
       const novoUsers = await Users.create({
-        nome: "Jorge",
-        email: "jorge_santin@gmail.com",
+        nome: "MJ",
+        email: "jorge_marcio@gmail.com",
         password: '123456'
         })
-        const {id, nome, email} = novoUsers
         return res.json(novoUsers)
     } catch(e){
       return res.status(400).json({

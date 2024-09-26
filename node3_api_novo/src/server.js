@@ -1,4 +1,5 @@
 import app from './app'
+
 //importando a conexão com o banco de dados
 const conn = require("./config/database");
 
