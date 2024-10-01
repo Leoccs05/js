@@ -24,7 +24,7 @@ export default function Login(){
   function handleClick(e){
     e.preventDefault()
 
-    dispatch(exampleAction.clicaBotao())
+    dispatch(exampleAction.clicaBotaoRequest())
   }
 
   React.useEffect(() => {
