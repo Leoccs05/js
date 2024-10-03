@@ -32,7 +32,7 @@ export default function Register() {
       toast.error('Senha deve ter entre 6 e 50 caracteres')
     }
 
-    if(formErros) return
+    if(formErros) return;
 
     try{
       await axios.post('/users/', {
