@@ -2,6 +2,7 @@ import express from 'express'
 import {resolve} from 'path'
 import cors from 'cors'
 import helmet from 'helmet'
+import delay from 'express-delay'
 
 
 import homeRoutes from './routes/home'
@@ -21,6 +22,7 @@ class App {
   middlewares(){
     this.app.use(cors());
     this.app.use(helmet());
+    this.app.use(delay(2000));
     this.app.use(express.urlencoded({extended:true}));
     this.app.use(express.json());
     this.app.use('/images/', express.static(resolve(__dirname,'uploads','images')));
