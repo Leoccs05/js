@@ -27,7 +27,6 @@ export default function Register() {
   }, [emailStored, id , nomeStored])
 
   async function handleSubmit(e){
-
     e.preventDefault();
     let formErros = false;
 
@@ -36,7 +35,7 @@ export default function Register() {
       toast.error('Nome deve ter entre 3 e 255 caracteres')
     }
 
-    if(isEmail(email)){
+    if(!isEmail(email)){
       formErros = true;
       toast.error('Email invalido')
     }
