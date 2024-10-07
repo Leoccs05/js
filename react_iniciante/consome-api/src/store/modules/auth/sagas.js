@@ -54,7 +54,7 @@ function* registerRequest({payload}) {
     const errors = get(e, 'response.data.error', []);
     const status = get(e, 'response.status', 0);
 
-    if(status ===401){
+    if(status ==401){
       toast.error('Voce precisa fazer login novamente');
       yield put(actions.loginFailure())
       return history.push('/login');
