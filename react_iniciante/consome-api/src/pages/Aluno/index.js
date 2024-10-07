@@ -3,13 +3,18 @@ import { Container } from "../../styles/GlobalStyles";
 import { get } from 'lodash';
 import { toast } from "react-toastify";
 import {isEmail, isInt, isFloat} from 'validator'
+import { useDispatch } from "react-redux";
+
 import axios from '../../services/axios'
 import history from '../../services/axios'
 import PropTypes from "prop-types";
 import { Form } from './styled'
 import Loading from '../../components/Loading'
+import * as actions from '../../store/modules/auth/actions'
 
 export default function Aluno({ match }) {
+  const dispatch = useDispatch()
+
   const id = get(match, 'params.id', 0);
   const [nome, setNome] = useState('');
   const [sobrenome, setSobrenome] = useState('');
@@ -47,7 +52,7 @@ export default function Aluno({ match }) {
     getData()
   }, [id])
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     let formErrors = false
 
@@ -81,6 +86,36 @@ export default function Aluno({ match }) {
       formErrors = true;
    }
    if (formErrors) return;
+   try{
+    setisLoading(true)
+    if(id){
+      await axios.put(`/aluno/${id}`,{
+        nome, sobrenome, email, idade, peso, altura
+      });
+      toast.success('Aluno editado com sucesso')
+    }else{
+      const {data} = await axios.put(`/aluno/`,{
+        nome, sobrenome, email, idade, peso, altura
+      });
+      toast.success('Aluno criado com sucesso')
+      history.push(`/aluno/${data.id}/edit`)
+
+    }
+    setisLoading(false)
+   }catch(err){
+    const status = get(err, 'response.status', 0)
+    const data = get(err, 'response.data', {})
+    const errors = get(data, 'errors', [])
+
+    if(errors.length >0){
+      errors.map(error => toast.error(error))
+    } else{
+      toast.error('Erro desconhecido')
+    }
+
+    if(status ==401) dispatch(actions.loginFailure())
+
+   }
   }
 
   return (
