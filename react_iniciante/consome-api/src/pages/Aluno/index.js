@@ -41,6 +41,7 @@ export default function Aluno({ match }) {
         const errors = get(err, 'response.data.errors',[])
 
         if(status ==400) errors.map(error => toast.error(error))
+        history.push('/')
       }
     }
     getData()
