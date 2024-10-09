@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import {get} from 'lodash';
 import {Link} from 'react-router-dom'
 import {FaUserCircle, FaEdit, FaWindowClose, FaExclamation} from 'react-icons/fa'
-
-import { Container } from '../../styles/GlobalStyles';
-import axios from '../../services/axios';
-import { AlunoContainer, ProfilePicture, NovoAluno } from './styled';
-
-import Loading from '../../components/Loading';
 import { toast } from 'react-toastify';
+import { AlunoContainer, ProfilePicture, NovoAluno } from './styled';
+import { Container } from '../../styles/GlobalStyles';
+
+import axios from '../../services/axios';
+import Loading from '../../components/Loading';
+
 
 export default function Alunos(){
   const [alunos, setAlunos] = useState([]);
@@ -48,22 +48,22 @@ export default function Alunos(){
       }else{
         toast.error('Ocorreu um erro ao excluir o aluno')
       }
-
       setIsLoading(false)
     }
   }
   return(
     <Container>
       <Loading isLoading={isLoading}/>
-    <h1>Alunos</h1>
+      <h1>Alunos</h1>
 
     <NovoAluno to="/aluno/">Novo Aluno</NovoAluno>
+
     <AlunoContainer>
     {alunos.map((aluno, index) => (
       <div key={String(aluno.id)}>
         <ProfilePicture>
         {get(aluno, 'Fotos[0].url', false) ? (
-          <img src={aluno.Fotos[0].url} alt="" />
+          <img src={aluno.Fotos[0].url} alt="Fotos"/>
         ):(
           <FaUserCircle size={36}/>
         )}
