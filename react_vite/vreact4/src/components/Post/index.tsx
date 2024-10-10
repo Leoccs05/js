@@ -6,7 +6,7 @@ export const Post = () =>{
     const [qs]= useSearchParams()
     return(
         <div>
-        <h1>Post {`Para : ${id}`} { `QS: ${qs.get}`}</h1>
+        <h1>Post {`Para : ${id}`} { `QS: ${qs.get('page')}`}</h1>
         </div>
     )
 }
