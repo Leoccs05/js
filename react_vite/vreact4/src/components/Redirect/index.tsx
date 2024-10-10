@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Redirect = () =>{
     const [time, setTime]= useState(3);
-    const timeout = useRef();
+    const timeout = useRef(0);
     const navigate = useNavigate();
 
     useEffect(()=>{
