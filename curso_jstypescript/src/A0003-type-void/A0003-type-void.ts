@@ -1,3 +1,4 @@
+//void é usado quando metodo ou funçao nao tem retorno
 function semRetorno(...args: string[]): void{
   console.log(args.join(''))
 }
