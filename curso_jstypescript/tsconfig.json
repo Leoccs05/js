@@ -1,11 +1,20 @@
 {
-    "compilerOptions": {
-      "module": "NodeNext",              // Especifica o módulo como NodeNext
-      "moduleResolution": "NodeNext",    // Configura a resolução de módulo para NodeNext
-      "target": "esnext",                // Define o alvo para ESNext (você pode ajustar se necessário)
-      "esModuleInterop": true,           // Permite interoperabilidade de módulos ES6 com CommonJS
-      "skipLibCheck": true,              // Opcional: Ignora checagem de bibliotecas (mais rápido)
-      "resolveJsonModule": true,         // Se você precisar importar arquivos JSON
-      "strict": true                     // Para ativar verificações estritas (opcional)
-    }
-  }
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "lib": ["ESNext", "DOM"],
+    "allowJs": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "removeComments": true,
+    "noEmitOnError": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src"]
+}
