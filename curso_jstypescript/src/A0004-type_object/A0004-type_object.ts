@@ -11,4 +11,4 @@ const objectA: {
 objectA.chaveB = 'Outro valor';
 objectA.chaveC = 'Nova Chave';
 objectA.chaveD = 'Nova Chave';
-console.log(objectA)
+console.log(objectA )
