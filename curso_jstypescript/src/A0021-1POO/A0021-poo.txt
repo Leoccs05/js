@@ -1,0 +1,4 @@
+Abstraçao - isola do objeto somente os conceitos que sao necessarios para o funcionamento do programa
+Encapsulamento - Visa ocultar partes internas do objeto e exibir apenas o necessario para uso externo
+Herança - visa passa caracteristicas de um objeto para o outro
+Polimorfismo - algo que é polimorfo tem a habilidade de assumir diferentes formas
